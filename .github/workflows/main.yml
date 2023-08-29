@@ -34,13 +34,8 @@ jobs:
         run: |
           cp -r dist/* .
 
-      - name: Setup git with token
-        run: |
-          git config --global user.name "Your GitHub Username"
-          git config --global user.email "Your Email"
-          git remote add origin-https https://github.com/RastNik/test-build.git
-          git remote set-url --push origin-https "https://x-access-token:${{ secrets.MY_GITHUB_TOKEN }}@github.com/RastNik/test-build.git"
-
-      - name: Push to main branch
-        run: |
-          git push origin-https main
+      - name: Commit and push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.MY_GITHUB_TOKEN }}
+          branch: main
