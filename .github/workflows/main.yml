@@ -1,0 +1,43 @@
+name: Build and deploy
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.5.3
+
+      - name: Cache Node.js modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-node-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: gulp buildProduction
+
+      - name: Checkout main branch
+        run: |
+          git fetch
+          git checkout main
+
+      - name: Copy build files
+        run: |
+          cp -r dist/* .
+
+      - name: Commit and push to main branch
+        run: |
+          git config --global user.name "Your GitHub Username"
+          git config --global user.email "Your Email"
+          git add .
+          git commit -m "Add built files from develop"
+          git push origin main
