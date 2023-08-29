@@ -40,4 +40,4 @@ jobs:
           git config --global user.email rastnik1991@gmail.com
           git add .
           git commit -m "Add built files from develop"
-          git push origin main
+          git push https://x-access-token:${{ secrets.MY_GITHUB_TOKEN }}@github.com/RastNik/test-build.git main
