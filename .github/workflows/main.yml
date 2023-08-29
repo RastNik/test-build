@@ -11,8 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3.5.3
         with:
-        persist-credentials: false
-        fetch-depth: 0
+          persist-credentials: false
+          fetch-depth: 0
 
       - name: Cache Node.js modules
         uses: actions/cache@v2
