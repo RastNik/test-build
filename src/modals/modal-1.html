@@ -1,0 +1,63 @@
+<div style="display: none;">
+	<div class="modal_styles" id="@@id">
+		<div class="modal_styles-box">
+			<button class="modal_styles-close arcticmodal-close"><svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 15 1 1M15 1 1 15" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></button>
+			<div class="modal_styles-content">
+				<div class="modal_styles-title">
+					<div class="modal_styles-el position-1">
+						<div class="parallaxScene">
+							<div class="layer" data-depth="0.4"><img src="img/modal-el-1.svg" alt=""></div>
+						</div>
+					</div>
+					<p>Get in touch with us</p>
+				</div>
+				<div class="modal_styles-el position-2">
+					<div class="parallaxScene">
+						<div class="layer" data-depth="0.2"><img src="img/modal-el-2.svg" alt=""></div>
+					</div>
+				</div>
+			</div>
+			<form action="sendmail.php" method="post" class="modal_styles__form modalFormSend">
+				<input type="hidden" name="form" value="Get in touch with us">
+				<div class="modal_styles__form-head">
+					<p class="modal_styles__form-title">Everything you need</p>
+					<p class="modal_styles__form-desc">Toontube provides more than just the plumbing. As a merchant of record, we do it for you:</p>
+				</div>
+				<div class="modal_styles__form-box">
+					<div class="modal_styles__form-block">
+						<p class="modal_styles__form-label">First name</p>
+						<div class="modal_styles__form-field">
+							<input type="text" name="name" placeholder="Ryo Takeru" required>
+						</div>
+					</div>
+					<div class="modal_styles__form-block">
+						<p class="modal_styles__form-label">Your e-mail</p>
+						<div class="modal_styles__form-field">
+							<input type="email" name="email" placeholder="ryo@toontube.co" required>
+						</div>
+					</div>
+					<div class="modal_styles__form-block">
+						<p class="modal_styles__form-label">Followers in the range</p>
+						<div class="modal_styles__form-field">
+							<select class="modalFormSelect" name="select">
+								<option value="5,000-10,000">5,000-10,000</option>
+								<option value="10,000-15,000">10,000-15,000</option>
+								<option value="15,000-20,000">15,000-20,000</option>
+							</select>
+						</div>
+					</div>
+					<div class="modal_styles__form-block">
+						<p class="modal_styles__form-label">Link to your graphic novel</p>
+						<div class="modal_styles__form-field">
+							<input type="text" name="link" placeholder="webtoon, tapas or your own site" required>
+						</div>
+					</div>
+				</div>
+				<div class="modal_styles__form-btns">
+					<button type="submit" class="modal_styles__form-submit btn red">Send</button>
+					<a href="#" class="modal_styles__form-close arcticmodal-close">Not now</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
