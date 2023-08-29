@@ -35,13 +35,14 @@ jobs:
 
       - name: Copy build files
         run: |
-          cp -r dist/* .
+          mkdir -p tmp_dist
+          cp -r dist/* tmp_dist/
 
       - name: Commit files
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add -A
+          git add tmp_dist/*
           git commit -m "Add changes from develop"
 
       - name: Push changes
