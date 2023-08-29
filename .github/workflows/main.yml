@@ -36,8 +36,8 @@ jobs:
 
       - name: Commit and push to main branch
         run: |
-          git config --global user.name "Your GitHub Username"
-          git config --global user.email "Your Email"
+          git config --global user.name RastNik
+          git config --global user.email rastnik1991@gmail.com
           git add .
           git commit -m "Add built files from develop"
           git push origin main
